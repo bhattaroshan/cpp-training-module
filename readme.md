@@ -11,18 +11,29 @@ The participants were given a task outlined in the document **Selection Task.md*
 - [Person6 - Fujifilms Task](https://github.com/avyjyo11/fujifilms-task)
 - [Person7 - Inventory Management System](https://github.com/sudiprajkunwar/inventory-management)
 
-# Structure
+# Folder Structure
 - Day1
-    - day-number-instructions.md
-    - module1.cpp
-    - module1.h
-    - module2.cpp
-    - module2.h
-    - main.cpp
-- Day2
-    - day-number-instructions.md
-    - module1.cpp
-    - module1.h
-    - module2.cpp
-    - module2.h
-    - main.cpp
+    - Instruction : No Available
+    - [patient.cpp](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day1/patient.cpp)
+
+- Day2-3
+    - [Instruction_Day_2](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day2-3/day-2-instructions.md)
+    - [Instruction_Day_3](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day2-3/day-3-instructions.md)
+    - [let.cpp](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day2-3/let.cpp)
+    - [let.h](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day2-3/let.h)
+
+- Day4
+    - [Instruction](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day4/day-4-instructions.md)
+    - [linked.cpp](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day4/linked.cpp)
+
+- Day5
+    - [Instruction](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day5/day-5-instructions.md)
+    - [shared.cpp](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day5/shared.cpp)
+
+- Day6
+    - [Instruction](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day6/day-6-instructions.md)
+    - [let.cpp](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day6/let.cpp)
+    - [let.h](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day6/let.h)
+
+- Day7
+    - [Instruction](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day7/day-7-instructions.md)

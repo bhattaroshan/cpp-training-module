@@ -1,6 +1,6 @@
 # Selection Process
 
-The participants were given a task outlined in the document **Selection Task.md** with a time frame of 3 days to complete it. After the submission, each participant was interviewed individually to explain their project and demonstrate their knowledge. Based on this process, the final selection was made.
+The participants were given a task outlined in the document [**Selection Task.md**](https://github.com/bhattaroshan/cpp-training-module/blob/main/Selection%20Task.md) with a time frame of 3 days to complete it. After the submission, each participant was interviewed individually to explain their project and demonstrate their knowledge. Based on this process, the final selection was made.
 
 ## GitHub Links to Participants' Projects
 - [Person1 - Inventory Management System (C++)](https://github.com/shayanbista/Inventory-management-system-c-)

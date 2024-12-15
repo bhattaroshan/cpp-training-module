@@ -10,3 +10,19 @@ The participants were given a task outlined in the document **Selection Task.md*
 - [Person5 - Inventory Management System](https://github.com/simonchaudhary/InventoryManagementSystem)
 - [Person6 - Fujifilms Task](https://github.com/avyjyo11/fujifilms-task)
 - [Person7 - Inventory Management System](https://github.com/sudiprajkunwar/inventory-management)
+
+# Structure
+- Day1
+    - day-number-instructions.md
+    - module1.cpp
+    - module1.h
+    - module2.cpp
+    - module2.h
+    - main.cpp
+- Day2
+    - day-number-instructions.md
+    - module1.cpp
+    - module1.h
+    - module2.cpp
+    - module2.h
+    - main.cpp

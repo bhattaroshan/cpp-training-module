@@ -33,7 +33,8 @@ The participants were given a task outlined in the document [**Selection Task.md
 
 - Day4
     - [Instruction](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day4/day-4-instructions.md)
-    - [linked.cpp](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day4/linked.cpp)
+    - [Templated singly linked list](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day4/templated_singly_linkedlist.cpp)
+    - [Variant.cpp](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day4/Variant.cpp)
 
 - Day5
     - [Instruction](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day5/day-5-instructions.md)

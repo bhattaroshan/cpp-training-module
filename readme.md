@@ -53,6 +53,7 @@ The participants were given a task outlined in the document [**Selection Task.md
     - [Variant.h](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day7/Variant.h)
     - [main.cpp](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day7/main.cpp)
     - [Research Assignment](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day7/topics-took-at.png)
+    - Assignment_1 : WAP to add/substract any two numbers without using any +-*/ operators
 
 
 - Day8

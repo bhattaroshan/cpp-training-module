@@ -3,22 +3,22 @@
 The participants were given a task outlined in the document [**Selection Task.md**](https://github.com/bhattaroshan/cpp-training-module/blob/main/Selection%20Task.md) with a time frame of 3 days to complete it. After the submission, each participant was interviewed individually to explain their project and demonstrate their knowledge. Based on this process, the final selection was made.
 
 ## GitHub Links to Participants' Evaluation Projects For onboarding
-- [Person1 - Inventory Management System (C++)](https://github.com/shayanbista/Inventory-management-system-c-)
-- [Person2 - Inventory Management System with Notification System](https://github.com/boharabirendra/InventoryMangSysWithNotiSys?tab=readme-ov-file)
-- [Person3 - Inventory Management System](https://github.com/Rashik977/Inventory-management-system)
-- [Person4 - Inventory Management System (C++)](https://github.com/bibekthapa007/inventory-cpp)
-- [Person5 - Inventory Management System](https://github.com/simonchaudhary/InventoryManagementSystem)
-- [Person6 - Fujifilms Task](https://github.com/avyjyo11/fujifilms-task)
-- [Person7 - Inventory Management System](https://github.com/sudiprajkunwar/inventory-management)
+- [Shayan - Inventory Management System (C++)](https://github.com/shayanbista/Inventory-management-system-c-)
+- [Birendra - Inventory Management System with Notification System](https://github.com/boharabirendra/InventoryMangSysWithNotiSys?tab=readme-ov-file)
+- [Rashik - Inventory Management System](https://github.com/Rashik977/Inventory-management-system)
+- [Bibek - Inventory Management System (C++)](https://github.com/bibekthapa007/inventory-cpp)
+- [Simon - Inventory Management System](https://github.com/simonchaudhary/InventoryManagementSystem)
+- [Abhishek - Fujifilms Task](https://github.com/avyjyo11/fujifilms-task)
+- [Sudip - Inventory Management System](https://github.com/sudiprajkunwar/inventory-management)
 
 ## GitHub Links to Participants' Assignments
-- [Person1 Assignment Link](https://github.com/shayanbista/cpp_training_assignments)
-- [Person2 Assignment Link](https://github.com/boharabirendra/cpp_training_assignments./tree/main)
-- Person3 Assignment Link : Not Available
-- Person4 Assignment Link: Not Available
-- [Person5 Assignment Link](https://github.com/simonchaudhary/cpp_training_assignments)
-- [Person6 Assignment Link](https://github.com/avyjyo11/cpp_training_assignments)
-- [Person7 Assignment Link](https://github.com/sudiprajkunwar/cpp_training_assignments)
+- [Shayan's Assignment Link](https://github.com/shayanbista/cpp_training_assignments)
+- [Birendra's Assignment Link](https://github.com/boharabirendra/cpp_training_assignments./tree/main)
+- Bibek's Assignment Link : Not Available
+- Rashik's Assignment Link: Not Available
+- [Simon's Assignment Link](https://github.com/simonchaudhary/cpp_training_assignments)
+- [Abhishek's Assignment Link](https://github.com/avyjyo11/cpp_training_assignments)
+- [Sudip's Assignment Link](https://github.com/sudiprajkunwar/cpp_training_assignments)
 
 # Folder Structure
 - Day1

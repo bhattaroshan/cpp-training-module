@@ -11,6 +11,10 @@ template<typename T>
 class LinkedList{
 public:
     void insert(T data){
+        int *b = new int(10);
+        int *a = b;
+        delete a;
+        
         Node<T> *node = new Node<T>;
         node->next = nullptr;
         node->data = data;

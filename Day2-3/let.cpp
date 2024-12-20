@@ -224,3 +224,7 @@ int Let::getDoubleCount(double d) const {
 int Let::getStringCount(const char* s) const{
     return strlen(s);
 }
+
+int main(){
+    Let a = "hello world";
+}

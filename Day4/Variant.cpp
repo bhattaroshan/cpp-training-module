@@ -6,6 +6,7 @@ enum class DataType{
     DOUBLE,
     STRING,
     BOOLEAN,
+    ARRAY,
 };
 
 class Variant{
@@ -92,6 +93,7 @@ public:
         }
     }
 
+
     friend std::ostream& operator<<(std::ostream& os, VariantList& vl);
     Node* getHead() const {return head;}
     Node* getLast() const {return tail;}
@@ -129,27 +131,23 @@ std::ostream& operator<<(std::ostream& os, VariantList& vl){
 
 class Let{
 public:
+    Let(int n):v(new Variant(n)){}
+    Let(const char* s):v(new Variant(s)){}
+    Let(double d):v(new Variant(d)){}
     Let(std::initializer_list<Variant> v){
     }
 
 private:
-    Variant *v;
+    Variant *v = nullptr;
 };
 
 int main(){
-    VariantList vl;
-    vl.addVariant(40);
-    vl.addVariant("hello");
-    vl.addVariant(67.89);
-    vl.addVariant("testing");
+   
+    Let a = {1,5,"test"};
+    Let d = 56;
+    Let x = 67.89;
 
-
-    // int a[50]={1,2,3,4,5,6};
-
-
-
-
-    std::cout<<vl<<std::endl;
+    Let g = "hello";
 
     return 0;
 }

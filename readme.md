@@ -47,7 +47,18 @@ The participants were given a task outlined in the document [**Selection Task.md
 
 - Day7
     - [Instruction](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day7/day-7-instructions.md)
+    - [let.cpp](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day7/let.cpp)
+    - [let.h](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day7/let.h)
+    - [Variant.cpp](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day7/Variant.cpp)
+    - [Variant.h](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day7/Variant.h)
+    - [main.cpp](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day7/main.cpp)
+    - [Research Assignment](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day7/topics-took-at.png)
+
 
 - Day8
     - [Instruction](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day8/day-8-instructions.md)
-    
+    - [let.cpp](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day8/let.cpp)
+    - [let.h](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day8/let.h)
+    - [logger.cpp](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day8/logger.cpp)
+    - [logger.h](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day8/logger.h)
+    - [main.cpp](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day8/main.cpp)

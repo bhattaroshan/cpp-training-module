@@ -63,3 +63,5 @@ The participants were given a task outlined in the document [**Selection Task.md
     - [logger.cpp](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day8/logger.cpp)
     - [logger.h](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day8/logger.h)
     - [main.cpp](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day8/main.cpp)
+    - Assignment_1 : WAP a small program implementing Singleton and Chain Of Responsibility Design Pattern
+    - Assignment_2 : Understand about 2d matrix and 'vector of vector'.

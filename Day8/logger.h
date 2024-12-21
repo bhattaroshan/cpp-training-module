@@ -25,5 +25,5 @@ public:
 
 private:
     Let& letInstance; 
-    Logger& logger;   
+    Logger& logger;
 };

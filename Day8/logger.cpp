@@ -6,7 +6,7 @@ LoggingDecorator::LoggingDecorator(Let& letObj, Logger& loggerObj)
 
 LoggingDecorator LoggingDecorator::operator+(const LoggingDecorator& other) {
     logger.log("Adding two LoggingDecorator objects");
-    Let& result = letInstance + other.letInstance; 
+    Let result = letInstance + other.letInstance; 
     return LoggingDecorator(result, logger);
 }
 

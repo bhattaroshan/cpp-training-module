@@ -15,7 +15,7 @@ The participants were given a task outlined in the document [**Selection Task.md
 - [Shayan's Assignment Link](https://github.com/shayanbista/cpp_training_assignments)
 - [Birendra's Assignment Link](https://github.com/boharabirendra/cpp_training_assignments./tree/main)
 - Bibek's Assignment Link : Not Available
-- Rashik's Assignment Link: Not Available
+- [Rashik's Assignment Link](https://github.com/Rashik977/cpp_training_assignments)
 - [Simon's Assignment Link](https://github.com/simonchaudhary/cpp_training_assignments)
 - [Abhishek's Assignment Link](https://github.com/avyjyo11/cpp_training_assignments)
 - [Sudip's Assignment Link](https://github.com/sudiprajkunwar/cpp_training_assignments)

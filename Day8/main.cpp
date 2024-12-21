@@ -4,14 +4,17 @@
 
 int main(){
 
-    Let a = 45.3;
-    Let b = 56.7;
+    Let a = 20;
+    Let b = 10;
+    Let c = a+b;
 
-    ConsoleLogger logger;
-    LoggingDecorator loggingLet1(a, logger);
-    LoggingDecorator loggingLet2(b, logger);
+    std::cout<<a<<" "<<b<<" "<<c<<std::endl;
 
-    LoggingDecorator result = loggingLet1 + loggingLet2;
-    std::cout<< result << std::endl; 
+    // ConsoleLogger logger;
+    // LoggingDecorator loggingLet1(a, logger);
+    // LoggingDecorator loggingLet2(b, logger);
+
+    // LoggingDecorator result = loggingLet1 + loggingLet2;
+    // std::cout<< result << std::endl; 
     return 0;
 }

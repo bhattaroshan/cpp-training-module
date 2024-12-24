@@ -1,88 +1,79 @@
-# Day 9: Modularization and Advanced Features in Image Processing
+# Day 9: Modularizing Image Processing and Shape Drawing
 
 ## Learning Objectives
 
-### Refactoring and Modularizing Code:
-- Separate image processing tasks (filters) and shape-drawing tasks into distinct classes for better maintainability and clarity.
-- Understand the principles of modular design to create reusable and scalable components.
+### Modularization:
+- Separate functionalities into distinct classes for better organization and maintainability.
+- Create a `Filter` class for image processing tasks.
+- Create a `Shape` class for drawing shapes on images.
 
-### Implementing Advanced Shape Drawing:
-- Extend functionality to support polygon drawing with arbitrary coordinates.
-- Learn how to handle complex geometric shapes and fill operations.
+### Implementing New Features:
+- Extend the `Filter` class with a median filter for noise reduction.
+- Enhance the `Shape` class with the ability to draw polygons.
 
-### Enhancing Filters:
-- Refactor filter-related tasks like grayscale conversion and edge detection into a dedicated class.
-- Implement additional filter options for future extensions.
-
----
-
-## Task
-
-### 1. **Refactor the Code**
-- Separate the code into two classes:
-  - `ImageFilters` for all filter-related operations, including grayscale conversion and Sobel edge detection.
-  - `ShapeDrawer` for shape-drawing operations, such as rectangles and polygons.
-
-### 2. **Implement `drawPoly`**
-- Extend the `ShapeDrawer` class to include a `drawPoly` method for drawing polygons with arbitrary vertices.
-- Support stroke and fill colors for polygons.
-
-### 3. **Integrate and Test**
-- Create a pipeline to load an image, apply filters, draw shapes, and save the output.
-- Test each feature individually and then combine them for a comprehensive test.
+### Testing and Debugging:
+- Validate the functionality of each class independently.
+- Debug and ensure that new features integrate seamlessly with existing code.
 
 ---
 
-## Example Classes and Methods
+## Tasks
 
-### Refactored Code Structure
+### 1. **Refactor Code into Classes**
+- Create a `Filter` class to encapsulate all image processing functionalities, including grayscale conversion, Sobel edge detection, and the new median filter.
+- Create a `Shape` class to handle shape-drawing functionalities, such as drawing rectangles and polygons.
+
+### 2. **Implement a Median Filter**
+- Add a method to the `Filter` class that applies a median filter to an image for noise reduction.
+- Ensure the filter handles edge cases effectively.
+
+### 3. **Enhance Shape Drawing**
+- Implement a `drawPoly` method in the `Shape` class to allow the drawing of polygons based on a list of coordinates.
+- Ensure the polygon can be filled with a specified color and outlined with a stroke color.
+
+### 4. **Test Modularized Code**
+- Test the `Filter` class by:
+  - Applying grayscale conversion.
+  - Performing Sobel edge detection.
+  - Testing the median filter on a noisy image.
+- Test the `Shape` class by:
+  - Drawing rectangles on an image.
+  - Drawing polygons with various configurations.
+
+---
+
+## Example Usage
+
+### Modularized Classes
 ```cpp
-class ImageFilters {
-public:
-    static void convertToGrayscale(std::vector<std::vector<RGB>>& imageData, int width, int height);
-    static void sobelEdgeDetection(std::vector<std::vector<RGB>>& imageData, int width, int height);
-};
-
-class ShapeDrawer {
-public:
-    static void drawRect(std::vector<std::vector<RGB>>& input, int x, int y, int width, int height, RGB stroke, RGB fill);
-    static void drawPoly(std::vector<std::vector<RGB>>& input, int width, int height, const std::vector<coordinate>& coordinates, RGB stroke, RGB fill);
-};
-```
-
-### Usage Example
-
-```cpp
-#include "ImageFilters.h"
-#include "ShapeDrawer.h"
-#include "stb_image.h"
-#include "stb_image_write.h"
+#include "Filter.h"
+#include "Shape.h"
 
 int main() {
     int width, height, channels;
-    unsigned char* imageData = stbi_load("./images/input.jpg", &width, &height, &channels, 3);
-    if (!imageData) {
-        std::cerr << "Failed to load image!" << std::endl;
+    unsigned char* imageData = stbi_load("./images/sample.jpg", &width, &height, &channels, 3);
+    if (imageData == nullptr) {
+        std::cout << "Failed to load image!" << std::endl;
         return -1;
     }
 
-    auto image = convertTo2D(imageData, width, height);
+    // Create Filter object and process the image
+    Filter filter;
+    auto image = filter.convertTo2D(imageData, width, height);
+    filter.convertToGrayscale(image, width, height);
+    filter.sobelEdgeDetection(image, width, height);
+    filter.applyMedianFilter(image, width, height); // New median filter
 
-    // Apply grayscale filter
-    ImageFilters::convertToGrayscale(image, width, height);
+    // Save the processed image
+    filter.saveToPNG(image, width, height, "processed_image.png");
 
-    // Apply Sobel edge detection
-    ImageFilters::sobelEdgeDetection(image, width, height);
+    // Create Shape object and draw shapes
+    Shape shape;
+    shape.drawRect(image, 50, 50, 200, 100, {255, 0, 0}, {0, 255, 0});
+    shape.drawPoly(image, width, height, {{100, 100}, {150, 200}, {200, 150}}, {0, 0, 255}, {255, 255, 0});
 
-    // Draw a rectangle
-    ShapeDrawer::drawRect(image, 50, 50, 200, 100, {0, 0, 0}, {255, 0, 0});
-
-    // Draw a polygon
-    std::vector<coordinate> polyVertices = {{100, 100}, {150, 200}, {200, 150}};
-    ShapeDrawer::drawPoly(image, width, height, polyVertices, {0, 0, 255}, {0, 255, 0});
-
-    // Save the output image
-    saveToPNG(image, width, height, "output.png");
+    // Save the image with shapes
+    filter.saveToPNG(image, width, height, "shapes_image.png");
 
     stbi_image_free(imageData);
     return 0;
@@ -91,34 +82,18 @@ int main() {
 
 ---
 
-## Key Features
+### Testing Median Filter
+- Load a noisy image and apply the median filter.
+- Compare the output with the original image to validate noise reduction.
 
-### Filters
-- **Grayscale Conversion**: Converts the image to grayscale using luminance calculation.
-- **Sobel Edge Detection**: Detects edges using the Sobel operator for gradient magnitude.
-
-### Shapes
-- **Rectangle**: Draws a rectangle with customizable stroke and fill colors.
-- **Polygon**: Draws arbitrary polygons defined by a list of vertices, with stroke and fill colors.
+### Testing Polygon Drawing
+- Use the `drawPoly` method with various sets of coordinates.
+- Verify the polygons are rendered correctly with both stroke and fill colors.
 
 ---
 
-## Suggested Exercises
-
-1. Load an image and apply the Sobel edge detection filter to visualize edges.
-2. Comment out the Sobel filter and test the `drawRect` method on a blank image.
-3. Extend the code to use the `drawPoly` method and create complex shapes.
-4. Refactor the provided code into the `ImageFilters` and `ShapeDrawer` classes.
-
----
-
-## Advanced Challenges
-
-1. **Dynamic Stroke Width**: Modify the shape-drawing functions to support variable stroke widths.
-2. **Additional Filters**: Implement new filters, such as Gaussian blur or color inversion, in the `ImageFilters` class.
-3. **Interactive Input**: Allow users to input shape parameters (e.g., vertices for a polygon) and filters interactively via a CLI or GUI.
-
----
-
-By completing these tasks, participants will gain hands-on experience with modular design, advanced image processing techniques, and geometric operations.
+By the end of this session, participants will have:
+- Modularized the codebase into distinct classes.
+- Added advanced image processing and shape drawing capabilities.
+- Tested and validated the new features effectively.
 

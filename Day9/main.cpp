@@ -45,9 +45,9 @@ void saveToPNG(const std::vector<std::vector<RGB>>& imageData, int width, int he
     for (int i = 0; i < height; ++i) {
         for (int j = 0; j < width; ++j) {
             const RGB& color = imageData[i][j];
-            imageFlat.push_back(color.r);  
-            imageFlat.push_back(color.g); 
-            imageFlat.push_back(color.b);  
+            imageFlat.emplace_back(color.r);  
+            imageFlat.emplace_back(color.g); 
+            imageFlat.emplace_back(color.b);  
         }
     }
 
@@ -58,11 +58,11 @@ void saveToPNG(const std::vector<std::vector<RGB>>& imageData, int width, int he
     }
 }
 
-void convertToGrayscale(std::vector<std::vector<RGB>>& imageData,int width, int height){
+void convertToGrayscale(std::vector<std::vector<RGB>> imageData,int width, int height){
      for (int i = 0; i < height; ++i) {
         for (int j = 0; j < width; ++j) {
             RGB& color = imageData[i][j];
-            float gray = color.r * 0.2989f+color.r * 0.5870f+color.r * 0.1140f;
+            float gray = color.r * 0.2989f+color.g * 0.5870f+color.b * 0.1140f;
             color.r = gray;
             color.g = gray;
             color.b = gray;
@@ -108,7 +108,7 @@ void sobelEdgeDetection(std::vector<std::vector<RGB>>& imageData, int width, int
     }
 }
 
-void drawRect(std::vector<std::vector<RGB>>& input, int x, int y, int width, int height, RGB stroke={0,0,0}, RGB fill={0xff,0xff,0xff}){
+void drawRect(std::vector<std::vector<RGB>>& input, int x, int y, int width, int height, RGB stroke={0,0,0}, std::optional<RGB> fill=std::nullopt){
     for(int i=x;i<x+width;++i){
         input[y][i]= stroke;
         input[y+height][i]= stroke;
@@ -117,35 +117,65 @@ void drawRect(std::vector<std::vector<RGB>>& input, int x, int y, int width, int
         input[i][x] = stroke;
         input[i][x+width] = stroke;
     }
+
+    if(fill==std::nullopt) return;
+
     for(int i=x+1; i<x+width;++i){
         for(int j=y+1;j<y+height;++j){
-            input[j][i] = fill;
+            input[j][i] = fill.value();
         }
     }
 }
 
-void drawPloy(std::vector<std::vector<RGB>>& input, int width, int height, const std::vector<coordinate>& coor, RGB stroke, RGB fill){
+void plotPoint(std::vector<std::vector<RGB>>& input,int x,int y, RGB color={0,0,0}){
+    input[y][x]=color;
+}
 
+
+void drawLine(std::vector<std::vector<RGB>>& input, int width, int height, int x1, int y1, int x2, int y2){
+
+    if(x2<x1){
+        int t = x2;
+        int u = y2;
+        x2 = x1;
+        x1 = t;
+        y2 = y1;
+        y1 = u;
+    }
+
+    float slope = (y2-y1)/((float)x2-(float)x1);
+
+    for(int x=x2;x<x1;x++){
+        float y = y1+slope*(x-x1);
+        plotPoint(input,x,y);
+    }
+
+}
+
+void drawPloy(std::vector<std::vector<RGB>>& input, int width, int height, const std::vector<coordinate>& coor, RGB stroke, RGB fill){
 }
 
 int main(){
     int width,height,channels;
     unsigned char* imageData = stbi_load("./images/traffic.jpg",&width,&height,&channels,3);
+    
+
     if(imageData==nullptr){
         std::cout<<"Image loading failed\n";
     }
 
     auto image = convertTo2D(imageData,width,height);
+    // drawLine(image,width, height, 200,200,100,50);
+    drawRect(image,100,100,200,200,{255,0,0});
+    saveToPNG(image,width,height,"leapfrog.png");
+   
 
-
-    convertToGrayscale(image,width,height);
-    sobelEdgeDetection(image,width,height);
-    saveToPNG(image,width,height,"test.png");
-    stbi_image_free(imageData);
+    // int height = 400;
+    // int width = 500;
+    // std::vector<std::vector<RGB>> image(height,std::vector<RGB>(width,{0xff,0xff,0xff}));
+    // drawRect(image,100,100,200,50,{0,0,0},{0xff,0,0});
+    // sobelEdgeDetection(image,width,height);
+    // stbi_image_free(imageData);
     return 0;
 }
 
-// int height = 400;
-// int width = 500;
-// std::vector<std::vector<RGB>> image(height,std::vector<RGB>(width,{0xff,0xff,0xff}));
-// drawRect(image,100,100,200,50,{0,0,0},{0xff,0,0});

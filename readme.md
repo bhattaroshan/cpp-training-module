@@ -77,3 +77,7 @@ The participants were given a task outlined in the document [**Selection Task.md
 
 - Day12
     - [Instruction](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day12/day-12-instructions.md)
+
+- Day13
+    - [Instruction]()
+    - Assignment_1: Take a week to watch and understand the [video](https://www.youtube.com/watch?v=llGgO74uXMI).

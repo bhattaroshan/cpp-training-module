@@ -77,6 +77,7 @@ The participants were given a task outlined in the document [**Selection Task.md
 
 - Day12
     - [Instruction](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day12/day-12-instructions.md)
+    - [main.cpp](https://github.com/bhattaroshan/cpp-training-module/blob/main/Day12/main.cpp)
 
 - Day13
     - [Instruction]()

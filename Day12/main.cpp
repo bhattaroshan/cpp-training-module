@@ -93,26 +93,12 @@ coordinate getStartingPostion(std::vector<std::vector<RGB>>& mat, int width, int
 
 void drawDotsUtils(std::vector<std::vector<RGB>>& mat, int width, int height,int i,int j){
     if(i<0 || j<0 || i>=height || j>=width) return;
-    // if(isWhite(mat[i][j])) 
-    // {
-    //     std::cout<<"White detectected at "<<i<<","<<j<<std::endl;
-    //     return;
-    // }
-    if(isGreen(mat[i][j])) {
-        std::cout<<"Green detected"<<std::endl;
+    
+    if(isWhite(mat[i][j]) || isGreen(mat[i][j]) || isRed(mat[i][j]) || isBlue(mat[i][j])){
         return;
-    }
-    // if(isRed(mat[i][j])) {
-    //     std::cout<<"Red detected"<<std::endl;
-    //     return;
-    // }
-    // if(isBlack(mat[i][j])){
-    //     // std::cout<<"Black detected"<<std::endl;
-    //     mat[i][j] = {0x00,0xff,0x00};
-    // }
-
+    } 
+  
     mat[i][j] = {0x00,0xff,0x00};
-    std::cout<<i<<","<<j<<std::endl;
     drawDotsUtils(mat,width,height,i-1,j); //top
     drawDotsUtils(mat,width,height,i+1,j); //bottom
     drawDotsUtils(mat,width,height,i,j-1); //left
@@ -121,8 +107,6 @@ void drawDotsUtils(std::vector<std::vector<RGB>>& mat, int width, int height,int
 
 void drawDots(std::vector<std::vector<RGB>>& mat, int width, int height){
     coordinate coor = getStartingPostion(mat,width,height);
-    coor.x = 70; //height
-    coor.y = 112; //width
     drawDotsUtils(mat,width,height,coor.x,coor.y);
 }
 
@@ -131,11 +115,8 @@ int main(){
     unsigned char* imageData = stbi_load("./maze.jpg",&width,&height,&channels,3);
 
     auto mat = convertTo2D(imageData,width,height); 
-    std::cout<<mat.size()<<","<<mat[0].size()<<std::endl;
     drawDots(mat,width,height);
-    // mat[70][112]={0,0xff,0};
     saveToPNG(mat,width,height,"test.png");
-    // std::cout<<coor.x<<","<<coor.y<<std::endl;
 
     return 0;
 }
